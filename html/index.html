@@ -11,7 +11,7 @@
 </head>
 
 <style>
-    .hidden{
+    .hidden {
         display: none;
     }
 </style>
@@ -57,9 +57,9 @@
         </div>
 
 
-        <div class="container text-start bg-secondary pb-3">
+        <div class="container text-start bg-secondary pb-3 mb-4">
             <div class="row g-3">
-                <div class="col-md-9 fs-4">
+                <div class="col-md-6 col-xl-9 fs-4">
                     <div class="row">
                         Current Streak: 1
                     </div>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="border bg-primary">
                         <p class="text-center">September</p>
                         <table class="table table-primary table-bordered text-center">
@@ -141,50 +141,107 @@
             </div>
         </div>
 
-        <div>
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Game Finished
-            </button>
-
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content container">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Quick Survey:</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            Everyone has a different definition of "done", how did you complete your game?
-                            <form>
-                                <div class="mb-3 form-radio">
-                                    <input type="radio" class="form-radio-input" name="completionReason" id="finished1">
-                                    <label class="form-radio-label" for="finished1">Fully Completed</label>
+        <div class="container text-center bg-secondary py-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#finishedModal">
+                        Game Finished
+                    </button>
+    
+                    <div class="modal fade" id="finishedModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="finishedModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered text-start">
+                            <div class="modal-content container">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="finishedModalLabel">Quick Survey:</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
-                                <div class="mb-3 form-radio">
-                                    <input type="radio" class="form-radio-input" name="completionReason" id="finished2">
-                                    <label class="form-radio-label" for="finished2">Completed Main Quest</label>
+                                <div class="modal-body">
+                                    Everyone has a different definition of "done", how did you complete your game?
+                                    <form>
+                                        <div class="mb-3 form-radio">
+                                            <input type="radio" class="form-radio-input" name="completionReason"
+                                                id="finished1">
+                                            <label class="form-radio-label" for="finished1">Fully Completed</label>
+                                        </div>
+                                        <div class="mb-3 form-radio">
+                                            <input type="radio" class="form-radio-input" name="completionReason"
+                                                id="finished2">
+                                            <label class="form-radio-label" for="finished2">Completed Main Quest</label>
+                                        </div>
+                                        <div class="mb-3 form-radio">
+                                            <input type="radio" class="form-radio-input" name="completionReason"
+                                                id="finished3">
+                                            <label class="form-radio-label" for="finished3">Got an Ending</label>
+                                        </div>
+                                        <div class="mb-3 form-radio">
+                                            <input type="radio" class="form-radio-input" name="completionReason"
+                                                id="finished4">
+                                            <label class="form-radio-label" for="finished4">Other</label>
+                                        </div>
+    
+                                        <button type="button" class="btn btn-primary move-on-1"
+                                            data-bs-dismiss="modal">Submit</button>
+                                    </form>
                                 </div>
-                                <div class="mb-3 form-radio">
-                                    <input type="radio" class="form-radio-input" name="completionReason" id="finished3">
-                                    <label class="form-radio-label" for="finished3">Got an Ending</label>
-                                </div>
-                                <div class="mb-3 form-radio">
-                                    <input type="radio" class="form-radio-input" name="completionReason" id="finished4">
-                                    <label class="form-radio-label" for="finished4">Other</label>
-                                </div>
-
-                                <button type="button" id="move-on-1" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
+    
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#abortedModal">
+                        Game Aborted
+                    </button>
+    
+                    <div class="modal fade" id="abortedModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="abortedModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered text-start">
+                            <div class="modal-content container">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="abortedModalLabel">Quick Survey:</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    What are some factors that led to you not wanting to continue this game?
+                                    <form>
+                                        <div class="mb-3 form-checkbox">
+                                            <input type="checkbox" class="form-checkbox-input" id="aborted1">
+                                            <label class="form-checkbox-label" for="aborted1">Game got too
+                                                repetitive.</label>
+                                        </div>
+                                        <div class="mb-3 form-checkbox">
+                                            <input type="checkbox" class="form-checkbox-input" id="aborted2">
+                                            <label class="form-checkbox-label" for="aborted2">Game got boring.</label>
+                                        </div>
+                                        <div class="mb-3 form-checkbox">
+                                            <input type="checkbox" class="form-checkbox-input" id="aborted3">
+                                            <label class="form-checkbox-label" for="aborted3">Didn't want to get all
+                                                endings.</label>
+                                        </div>
+                                        <div class="mb-3 form-checkbox">
+                                            <input type="checkbox" class="form-checkbox-input" id="aborted4">
+                                            <label class="form-checkbox-label" for="aborted4">Other</label>
+                                        </div>
+    
+                                        <button type="button" class="btn btn-primary move-on-1"
+                                            data-bs-dismiss="modal">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+
     </div>
 
     <div id="view2" class="hidden">
-        
+
     </div>
 
 </body>
