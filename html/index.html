@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Backlog</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<style>
+    .hidden{
+        display: none;
+    }
+</style>
+
+<body class="container">
+    <nav class="navbar bg-body-tertiary bg-primary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../images/Logo v1.png" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
+            </a>
+            <div class="justify-content-end">Profile</div>
+        </div>
+    </nav>
+
+    <div id="view1">
+
+        <div class="container text-start bg-secondary pb-3 mb-4">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <img src="../images/test-images/factorioCover.png" class="img-fluid mx-auto d-block"
+                        alt="Factorio's Steam Cover">
+                </div>
+                <div class="col-md-9 fs-4">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Game Name: Factorio
+                        </div>
+                        <div class="col-sm-6">
+                            Producer: Wube Software LTD
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Current Playtime: 39.3 Hours
+                        </div>
+                        <div class="col-sm-6">
+                            Estimated Playtime: 40-60 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container text-start bg-secondary pb-3">
+            <div class="row g-3">
+                <div class="col-md-9 fs-4">
+                    <div class="row">
+                        Current Streak: 1
+                    </div>
+                    <div class="row">
+                        Highest Streak: 5
+                    </div>
+                    <div class="row">
+                        Common Cheat: The Binding of Isaac (2)
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="border bg-primary">
+                        <p class="text-center">September</p>
+                        <table class="table table-primary table-bordered text-center">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="table-success">1</td>
+                                <td class="table-success">2</td>
+                                <td class="table-success">3</td>
+                                <td class="table-success">4</td>
+                                <td class="table-success">5</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>6</td>
+                                <td class="table-success">7</td>
+                                <td class="table-danger">8</td>
+                                <td>9</td>
+                                <td class="table-danger">10</td>
+                                <td>11</td>
+                                <td>12</td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-success">13</td>
+                                <td class="table-active">14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>17</td>
+                                <td>18</td>
+                                <td>19</td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                                <td>25</td>
+                                <td>26</td>
+                            </tr>
+
+                            <tr>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Game Finished
+            </button>
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content container">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Quick Survey:</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Everyone has a different definition of "done", how did you complete your game?
+                            <form>
+                                <div class="mb-3 form-radio">
+                                    <input type="radio" class="form-radio-input" name="completionReason" id="finished1">
+                                    <label class="form-radio-label" for="finished1">Fully Completed</label>
+                                </div>
+                                <div class="mb-3 form-radio">
+                                    <input type="radio" class="form-radio-input" name="completionReason" id="finished2">
+                                    <label class="form-radio-label" for="finished2">Completed Main Quest</label>
+                                </div>
+                                <div class="mb-3 form-radio">
+                                    <input type="radio" class="form-radio-input" name="completionReason" id="finished3">
+                                    <label class="form-radio-label" for="finished3">Got an Ending</label>
+                                </div>
+                                <div class="mb-3 form-radio">
+                                    <input type="radio" class="form-radio-input" name="completionReason" id="finished4">
+                                    <label class="form-radio-label" for="finished4">Other</label>
+                                </div>
+
+                                <button type="button" id="move-on-1" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view2" class="hidden">
+        
+    </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="../js/mover.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+</html>
