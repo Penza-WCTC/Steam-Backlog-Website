@@ -58,8 +58,11 @@
                         <div class="col-sm-3">
                             <p>Tags Listed:</p>
                         </div>
-                        <div class="col-sm-9">
-                            <p>tags would be dumped here</p>
+                        <div class="col-sm-9 fs-6">
+                            <p class="px-1 py-1 rounded-pill bg-info d-inline-block">Automation</p>
+                            <p class="px-1 py-1 rounded-pill bg-info d-inline-block">Base Building</p>
+                            <p class="px-1 py-1 rounded-pill bg-info d-inline-block">Resource Management</p>
+                            <p class="px-1 py-1 rounded-pill bg-info d-inline-block">Crafting</p>
                         </div>
                     </div>
                 </div>
@@ -283,12 +286,18 @@
                             </div>
                         </div>
                         <div class="row g-3">
-                            <div class="col-sm-3">
-                                <p>Tags Listed:</p>
+                            <div class="col-lg-6 text-nowrap">
+                                Select your favorite tags:
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-lg-6">
                                 <input type="checkbox" class="btn-check" id="tag1" autocomplete="off">
-                                <label class="btn btn-primary" for="tag1">Factory Builder</label>
+                                <label class="btn btn-primary" for="tag1">Automation</label>
+                                <input type="checkbox" class="btn-check" id="tag2" autocomplete="off">
+                                <label class="btn btn-primary" for="tag2">Base Building</label>
+                                <input type="checkbox" class="btn-check" id="tag3" autocomplete="off">
+                                <label class="btn btn-primary" for="tag3">Resource Management</label>
+                                <input type="checkbox" class="btn-check" id="tag4" autocomplete="off">
+                                <label class="btn btn-primary" for="tag4">Crafting</label>
                             </div>
                         </div>
                         <div class="row g-3">
@@ -296,18 +305,93 @@
                             <textarea name="finalThoughts" id="finalThoughts" class="fs-6"></textarea>
                         </div>
                         <div class="row g-3">
-                            <button class="btn btn-primary">Submit Review and Find your Next Game!</button>
+                            <!-- currently a div so that the form doesn't submit -->
+                            <div class="btn btn-primary move-on-2">Submit Review and Find your Next Game!</div>
                         </div>
                     </form>
-
-
                 </div>
+            </div>
+        </div>
 
+        <div class="container text-center bg-secondary pt-2 pb-1 mb-4">
+            <p class="fs-4">Scroll down to see all reviews!</p>
+        </div>
+
+        <div class="contianer text-start bg-secondary pb-3 mb-4 fs-4">
+            <div class="row g-3">
+                <div class="col-md-2">
+                    <img src="../images/test-images/chromokizProfileIcon.png" alt="A profile picture for chromokiz"
+                        class="w-75 mx-auto d-sm-none d-md-block">
+                </div>
+                <div class="col-md-10">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="col-md-auto">
+                                Username:
+                            </div>
+                            <div class="col-md-auto">
+                                <p>chromokiz</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6  d-sm-none d-md-block">
+                            <div class="col-md-auto">
+                                Finished / Aborted Games:
+                            </div>
+                            <div class="col-md-auto">
+                                <p>12 / 33</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6  d-sm-none d-md-block">
+                            <div class="col-md-auto">
+                                Hours Played:
+                            </div>
+                            <div class="col-md-auto">
+                                <p>0</p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-auto">
+                                Rating:
+                            </div>
+                            <div class="col-md-auto">
+                                <p><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i> <i class="bi bi-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            Favorite Tags:
+                        </div>
+                        <div class="col-md-6">
+                            <p class="px-1 py-1 rounded-pill bg-info d-inline-block fs-6">Automation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-10">
+                    Final Thoughts:
+                    <p>too many machines to build. would not build again. too many machines to build. would not build again.
+                        too many machines to build. would not build again.</p>
+                </div>
+                <div class="col-2">
+                    <i class="bi bi-arrow-up-circle-fill"></i>
+                    <div>12</div>
+                    <i class="bi bi-arrow-down-circle"></i>
+                </div>
             </div>
         </div>
 
     </div>
 
+    <div id="view3" class="">
+        
+    </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
