@@ -7,3 +7,8 @@ $(".move-on-2").on("click", function(){
     $("#view2").addClass("hidden");
     $("#view3").removeClass("hidden");
 })
+
+$(".move-on-3").on("click", function(){
+    $("#view3").addClass("hidden");
+    $("#view1").removeClass("hidden");
+})
