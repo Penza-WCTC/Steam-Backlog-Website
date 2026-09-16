@@ -1,0 +1,17 @@
+@use "sass:color";
+//define variables first
+$primary: #586994;
+$secondary: #7D869C;
+$success: #306B34;
+$danger: #E94F37;
+// green $info: #84C318;
+$info: #CA895F;
+// shamrock mode? $info: #09BC8A;
+$light: #f1f2ee;
+$white: #f1f2ee;
+$body-bg: #f1f2ee;
+
+
+// include bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
