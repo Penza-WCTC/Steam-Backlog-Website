@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steam Backlog</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../styles/css/steamBacklog.css">
 </head>
 
@@ -26,15 +27,16 @@
         </div>
     </nav>
 
-    <div id="view1">
+    <div id="view1" class="bg-secondary">
 
-        <div class="container text-start bg-secondary pb-3 mb-4">
+        <div class="container text-start  pb-3 mb-4">
             <div class="row g-3">
                 <div class="col-md-4">
                     <img src="../images/test-images/factorioCover.png" class="img-fluid mx-auto d-block"
                         alt="Factorio's Steam Cover">
                 </div>
-                <div class="col-md-8 fs-4">
+
+                <div class="col-md-8 fs-4 d-flex flex-column justify-content-evenly">
                     <div class="row">
                         <div class="col-sm-6">
                             <p>Game Name: Factorio</p>
@@ -67,17 +69,17 @@
         </div>
 
 
-        <div class="container text-start bg-secondary pb-3 mb-2">
+        <div class="container text-start pb-3 mb-2">
             <div class="row g-3">
-                <div class="col-md-6 col-xl-8 fs-4">
+                <div class="col-md-6 col-xl-8 fs-4 d-flex flex-column justify-content-evenly">
                     <div class="row">
-                        Current Streak: 1
+                        <p>Current Streak: 1</p>
                     </div>
                     <div class="row">
-                        Highest Streak: 5
+                        <p>Highest Streak: 5</p>
                     </div>
                     <div class="row">
-                        Common Cheat: The Binding of Isaac (2)
+                        <p>Common Cheat: The Binding of Isaac (2)</p>
                     </div>
                 </div>
 
@@ -151,9 +153,9 @@
             </div>
         </div>
 
-        <div class="container text-center bg-secondary py-3">
+        <div class="container text-center py-3">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mt-1">
                     <button type="button" class="btn btn-success" data-bs-toggle="modal"
                         data-bs-target="#finishedModal">
                         Game Finished
@@ -201,7 +203,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mt-1">
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#abortedModal">
                         Game Aborted
                     </button>
