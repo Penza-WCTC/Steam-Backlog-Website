@@ -15,7 +15,7 @@
 
 </body>
 
-<body>
+<body class="bg-secondary-subtle">
     <nav class="navbar bg-primary mb-4">
         <div class="container">
             <a class="navbar-brand" href="./index.html">
@@ -28,191 +28,163 @@
         </div>
     </nav>
 
-    <div class="container bg-primary">
+    <div class="container">
 
-        <div class="container text-start pb-3 mb-4">
+        <div class="container text-start pb-3 mb-4 border border-2 py-3 rounded bg-light">
             <div class="row g-3">
                 <div class="col-md-4">
-                    <img src="./images/test-images/chromokizProfileIcon.png" class="w-50 mx-auto d-block"
-                        alt="Factorio's Steam Cover">
+                    <img src="./images/test-images/chromokizProfileIcon.png"
+                        class="w-50 mx-auto d-block rounded rounded-3" alt="Factorio's Steam Cover">
                 </div>
 
-                <div class="col-md-8 fs-4 d-flex flex-column justify-content-evenly">
+                <div class="col-md-8 d-flex flex-column justify-content-evenly">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <p>Username: Chromokiz</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>Finished / Aborted: 12 / 33</p>
+                        <div class="col-sm-12">
+                            <p class="fs-4">chromokiz</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <p>Chromokiz's Playtime: 523 Hours</p>
+                            <div class="row">
+                                <p class="fs-4">Total Playtime:</p>
+                            </div>
+                            <div class="row">
+                                <p class="fs-5">523 Hrs</p>
+                            </div>
                         </div>
                         <div class="col-sm-6">
-                            <p>Current Game: Lethal Company</p>
+                            <div class="row">
+                                <p class="fs-4">Finished / Aborted:</p>
+                            </div>
+                            <div class="row">
+                                <p class="fs-5">12 / 33</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-success" type="submit">Search</button>
-            </form>
-        </div>
+
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search Your Reviews" aria-label="Search" />
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
 
         <div>
-            <div class="container pb-3 my-4 row g-3">
-                <div class="my-4  bg-secondary col-12">
+            <div class="container pb-3 my-4 bg-danger-subtle rounded border border-opacity-50 border-danger py-3">
+                <div class="offset-1">
                     <div class="row g-3">
-                        <div class="col-md-12">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="col-md-auto">
-                                        Game Name:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>Factorio</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6  d-none d-md-block">
-                                    <div class="col-md-auto">
-                                        Finished / Aborted Games:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>12 / 33</p>
-                                    </div>
-                                </div>
+                        <div class="col-md-6">
+                            <p class="fs-4">Factorio Review</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="fs-4"><i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6  d-none d-md-block">
+                            <div class="row">
+                                <p class="fs-5">Hours Played:</p>
                             </div>
-                            <div class="row g-3">
-                                <div class="col-md-6  d-none d-md-block">
-                                    <div class="col-md-auto">
-                                        Hours Played:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>0</p>
-                                    </div>
+                            <div class="row">
+                                <p class="fs-6">0</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <p class="fs-5">Reason for Aborting:</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-auto">
+                                    <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Game got too
+                                        repetitive</p>
+                                    <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Game was boring</p>
 
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="col-md-auto">
-                                        Rating:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
-                                                class="bi bi-star"></i>
-                                            <i class="bi bi-star"></i> <i class="bi bi-star"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    Favorite Tags:
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="px-1 py-1 rounded-pill bg-info d-inline-block fs-6">Automation</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row g-3 bg-danger mt-2">
-                        <div class="col-1 d-none d-md-block">
 
-                        </div>
-                        <div class="col-9">
-                            Final Thoughts:
-                            <p>too many machines to build. would not build again. too many machines to build. would not
+
+                    <div class="mt-2 pe-md-5">
+                        <div class="row">
+                            <p class="fs-5">Final Thoughts:</p>
+                            <p class="fs-6">too many machines to build. would not build again. too many machines to
+                                build.
+                                would
+                                not
                                 build again.
                                 too many machines to build. would not build again.</p>
                         </div>
-                        <div class="col-2">
-                            <i class="bi bi-arrow-up-circle-fill"></i>
-                            <div>12</div>
-                            <i class="bi bi-arrow-down-circle"></i>
+                        <div class="d-flex justify-content-end">
+                            <div class="p-2"><i class="bi bi-trash-fill"></i></div>
+                            <div class="p-2"><i class="bi bi-pencil-fill"></i></div>
                         </div>
                     </div>
                 </div>
-
-                <div class="my-4 bg-secondary col-12">
+            </div>
+            <div class="container pb-3 my-4 bg-success-subtle rounded border border-opacity-50 border-success py-3">
+                <div class="offset-1">
                     <div class="row g-3">
-                        <div class="col-md-12">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="col-md-auto">
-                                        Game Name:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>Rain World</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6  d-none d-md-block">
-                                    <div class="col-md-auto">
-                                        Finished / Aborted Games:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>12 / 33</p>
-                                    </div>
-                                </div>
+                        <div class="col-md-6">
+                            <p class="fs-4">Rain World Review</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="fs-4"><i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6  d-none d-md-block">
+                            <div class="row">
+                                <p class="fs-5">Hours Played:</p>
                             </div>
-                            <div class="row g-3">
-                                <div class="col-md-6  d-none d-md-block">
-                                    <div class="col-md-auto">
-                                        Hours Played:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>37</p>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="col-md-auto">
-                                        Rating:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
-                                                class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i>
-                                        </p>
-                                    </div>
-                                </div>
+                            <div class="row">
+                                <p class="fs-6">37</p>
                             </div>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    Favorite Tags:
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="px-1 py-1 rounded-pill bg-info d-inline-block fs-6">Exploration</p>
-                                    <p class="px-1 py-1 rounded-pill bg-info d-inline-block fs-6">Atmosphereic</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <p class="fs-5">Finished By:</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-auto">
+                                    <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Completed Main Quest
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row g-3 bg-success mt-2">
-                        <div class="col-1 d-none d-md-block">
 
+
+                    <div class="mt-2 pe-md-5">
+                        <div class="row">
+                            <p class="fs-5">Final Thoughts:</p>
+                            <p class="fs-6">This has now become my most favourite game of all time... From the visuals,
+                                the beautiful backgrounds, the different predators that roam around the world and the
+                                cute lil adorable slugcat you play as gives an indescribable feeling of warmth and
+                                awe... (a alot of fear too). You are just a small piece of a larger puzzle.. I will
+                                never forget that wonderful feeling...</p>
                         </div>
-                        <div class="col-9">
-                            Final Thoughts:
-                            <p>i remember spending about 30 minutes trying to learn how to leap when i first started.
-                                Other than that it arguably has the best storyline of any game ive played, the visuals
-                                are so eye pleasing and i cant imagine how long it took them to make each room. Dont get
-                                me started on the watcher dlc though.. Its all so pretty and this game will forever have
-                                a special place in my heart.</p>
-                        </div>
-                        <div class="col-2">
-                            <i class="bi bi-arrow-up-circle-fill"></i>
-                            <div>58</div>
-                            <i class="bi bi-arrow-down-circle"></i>
+                        <div class="d-flex justify-content-end">
+                            <div class="p-2"><i class="bi bi-trash-fill"></i></div>
+                            <div class="p-2"><i class="bi bi-pencil-fill"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
