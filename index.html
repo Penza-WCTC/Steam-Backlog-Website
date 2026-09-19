@@ -17,7 +17,7 @@
     }
 </style>
 
-<body>
+<body class="bg-secondary-subtle">
     <nav class="navbar bg-primary mb-4">
         <div class="container">
             <a class="navbar-brand" href="./index.html">
@@ -34,8 +34,8 @@
 
         <div id="view1" class="">
 
-            <div class="container text-start  pb-3 mb-4">
-                <div class="px-3 pb-3 border border-2 row g-3">
+            <div class="container text-start pb-3 mb-4">
+                <div class="px-3 pb-3 border border-2 row g-3 bg-light rounded">
                     <div class="col-md-4">
                         <img src="../images/test-images/factorioCover.png" class="img-fluid mx-auto d-block rounded"
                             alt="Factorio's Steam Cover">
@@ -85,7 +85,7 @@
 
 
             <div class="container text-start pb-3 mb-2">
-                <div class="px-3 pb-3 border border-2 row g-3">
+                <div class="px-3 pb-3 border border-2 row g-3 bg-light rounded">
                     <div class="col-md-6 col-xl-8 fs-4 d-flex flex-column justify-content-evenly">
                         <div class="row">
                             <div class="col-sm-6">
@@ -205,28 +205,36 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Everyone has a different definition of "done", how did you complete your game?
+                                        <p>Everyone has a different definition of "done", how did you complete your
+                                            game?</p>
                                         <form>
-                                            <div class="mb-3 form-radio">
-                                                <input type="radio" class="form-radio-input" name="completionReason"
-                                                    id="finished1">
-                                                <label class="form-radio-label" for="finished1">Fully Completed</label>
+                                            <div class="row g-3">
+                                                <div class="mb-3 form-radio col-6">
+                                                    <input type="radio" class="form-radio-input" name="completionReason"
+                                                        id="finished1">
+                                                    <label class="form-radio-label" for="finished1">Fully
+                                                        Completed</label>
+                                                </div>
+                                                <div class="mb-3 form-radio col-6">
+                                                    <input type="radio" class="form-radio-input" name="completionReason"
+                                                        id="finished2">
+                                                    <label class="form-radio-label" for="finished2">Completed Main
+                                                        Quest</label>
+                                                </div>
                                             </div>
-                                            <div class="mb-3 form-radio">
-                                                <input type="radio" class="form-radio-input" name="completionReason"
-                                                    id="finished2">
-                                                <label class="form-radio-label" for="finished2">Completed Main
-                                                    Quest</label>
-                                            </div>
-                                            <div class="mb-3 form-radio">
-                                                <input type="radio" class="form-radio-input" name="completionReason"
-                                                    id="finished3">
-                                                <label class="form-radio-label" for="finished3">Got an Ending</label>
-                                            </div>
-                                            <div class="mb-3 form-radio">
-                                                <input type="radio" class="form-radio-input" name="completionReason"
-                                                    id="finished4">
-                                                <label class="form-radio-label" for="finished4">Other</label>
+
+                                            <div class="row g-3">
+                                                <div class="mb-3 form-radio col-6">
+                                                    <input type="radio" class="form-radio-input" name="completionReason"
+                                                        id="finished3">
+                                                    <label class="form-radio-label" for="finished3">Got an
+                                                        Ending</label>
+                                                </div>
+                                                <div class="mb-3 form-radio col-6">
+                                                    <input type="radio" class="form-radio-input" name="completionReason"
+                                                        id="finished4">
+                                                    <label class="form-radio-label" for="finished4">Other</label>
+                                                </div>
                                             </div>
 
                                             <button type="button" class="btn btn-primary move-on-1"
@@ -254,27 +262,46 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        What are some factors that led to you not wanting to continue this game?
+                                        <p>What are some factors that led to you not wanting to continue this game?</p>
                                         <form>
-                                            <div class="mb-3 form-checkbox">
-                                                <input type="checkbox" class="form-checkbox-input" id="aborted1">
-                                                <label class="form-checkbox-label" for="aborted1">Game got too
-                                                    repetitive.</label>
+                                            <div class="row g-3">
+                                                <div class="col-6">
+                                                    <div class="mb-3 form-checkbox">
+                                                        <input type="checkbox" class="form-checkbox-input"
+                                                            id="aborted1">
+                                                        <label class="form-checkbox-label" for="aborted1">Game got too
+                                                            repetitive.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3 form-checkbox">
+                                                        <input type="checkbox" class="form-checkbox-input"
+                                                            id="aborted2">
+                                                        <label class="form-checkbox-label" for="aborted2">Game got
+                                                            boring.</label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="mb-3 form-checkbox">
-                                                <input type="checkbox" class="form-checkbox-input" id="aborted2">
-                                                <label class="form-checkbox-label" for="aborted2">Game got
-                                                    boring.</label>
+                                            <div class="row g-3">
+                                                <div class="col-6">
+                                                    <div class="mb-3 form-checkbox">
+                                                        <input type="checkbox" class="form-checkbox-input"
+                                                            id="aborted3">
+                                                        <label class="form-checkbox-label" for="aborted3">I disliked
+                                                            the genre.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3 form-checkbox">
+                                                        <input type="checkbox" class="form-checkbox-input"
+                                                            id="aborted4">
+                                                        <label class="form-checkbox-label" for="aborted4">Other</label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="mb-3 form-checkbox">
-                                                <input type="checkbox" class="form-checkbox-input" id="aborted3">
-                                                <label class="form-checkbox-label" for="aborted3">Didn't want to get all
-                                                    endings.</label>
-                                            </div>
-                                            <div class="mb-3 form-checkbox">
-                                                <input type="checkbox" class="form-checkbox-input" id="aborted4">
-                                                <label class="form-checkbox-label" for="aborted4">Other</label>
-                                            </div>
+
+
+
 
                                             <button type="button" class="btn btn-primary move-on-1"
                                                 data-bs-dismiss="modal">Submit</button>
@@ -290,56 +317,44 @@
         </div>
 
 
-        <div id="view2" class="hidden">
+        <div id="view2" class="">
 
             <div class="container text-start pb-3 mb-4">
-                <div class="row g-3">
+                <div class="px-3 pb-3 border border-2 row g-3 bg-light rounded">
                     <div class="col-md-4">
-                        <img src="../images/test-images/factorioCover.png" class="img-fluid mx-auto d-block"
+                        <img src="../images/test-images/factorioCover.png" class="img-fluid mx-auto d-block rounded"
                             alt="Factorio's Steam Cover">
                     </div>
-                    <div class="col-md-8 fs-4 d-flex flex-column justify-content-evenly">
-                        <form>
-                            <div class="row g-3">
+
+                    <div class="col-md-8 fs-4 d-flex">
+                        <form class="w-100 d-flex  flex-column justify-content-evenly">
+                            <div class="row">
                                 <div class="col-sm-5 text-nowrap">
-                                    Your Rating:
+                                    Rating:
                                 </div>
-                                <div class="col-1">
+                                <div class="col">
                                     <i class="bi bi-star-fill"></i>
                                 </div>
-                                <div class="col-1">
+                                <div class="col">
                                     <i class="bi bi-star-fill"></i>
                                 </div>
-                                <div class="col-1">
+                                <div class="col">
                                     <i class="bi bi-star-fill"></i>
                                 </div>
-                                <div class="col-1">
+                                <div class="col">
                                     <i class="bi bi-star-fill"></i>
                                 </div>
-                                <div class="col-1">
+                                <div class="col">
                                     <i class="bi bi-star"></i>
                                 </div>
                             </div>
-                            <div class="row g-3">
-                                <div class="col-lg-6 text-nowrap">
-                                    Select your favorite tags:
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="checkbox" class="btn-check" id="tag1" autocomplete="off">
-                                    <label class="btn btn-primary" for="tag1">Automation</label>
-                                    <input type="checkbox" class="btn-check" id="tag2" autocomplete="off">
-                                    <label class="btn btn-primary" for="tag2">Base Building</label>
-                                    <input type="checkbox" class="btn-check" id="tag3" autocomplete="off">
-                                    <label class="btn btn-primary" for="tag3">Resource Management</label>
-                                    <input type="checkbox" class="btn-check" id="tag4" autocomplete="off">
-                                    <label class="btn btn-primary" for="tag4">Crafting</label>
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <label for="finalThoughts">Leave your final thoughts here</label>
+
+                            <div class="row">
+                                <label for="finalThoughts">Final Thoughts:</label>
                                 <textarea name="finalThoughts" id="finalThoughts" class="fs-6"></textarea>
                             </div>
-                            <div class="row g-3">
+
+                            <div class="row">
                                 <!-- currently a div so that the form doesn't submit -->
                                 <div class="btn btn-primary move-on-2">Submit Review and Find your Next Game!</div>
                             </div>
@@ -350,156 +365,116 @@
 
             <div class="container text-center pt-2 pb-1 mb-4">
                 <p class="fs-4">Scroll down to see all reviews!</p>
+                <hr>
             </div>
 
-            <div class="contianer text-start fs-4">
-                <div class="container pb-3 my-4 bg-primary">
+            <div class="contianer text-start">
+                <div class="container pb-3 my-4 bg-danger-subtle rounded border border-opacity-50 border-danger py-3 px-1">
                     <div class="row g-3">
-                        <div class="col-1 d-none d-md-block">
-
-                        </div>
-                        <div class="col-md-2 d-none d-md-block">
+                        <div class="col-md-2 offset-md-1 d-none d-md-block">
                             <img src="../images/test-images/chromokizProfileIcon.png"
-                                alt="A profile picture for chromokiz" class="w-75 mx-auto">
+                                alt="A profile picture for chromokiz" class="w-75 mx-auto border border-2 rounded-3">
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-9 offset-1 offset-md-0">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <div class="col-md-auto">
-                                        Username:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>chromokiz</p>
-                                    </div>
+                                    <p class="fs-4">chromokiz</p>
                                 </div>
-                                <div class="col-md-6  d-none d-md-block">
-                                    <div class="col-md-auto">
-                                        Finished / Aborted Games:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>12 / 33</p>
-                                    </div>
+                                <div class="col-md-6">
+                                    <p class="fs-4"><i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <i class="bi bi-star"></i>
+                                        <i class="bi bi-star"></i>
+                                        <i class="bi bi-star"></i>
+                                    </p>
                                 </div>
                             </div>
                             <div class="row g-3">
                                 <div class="col-md-6  d-none d-md-block">
-                                    <div class="col-md-auto">
-                                        Hours Played:
+                                    <div class="row">
+                                        <p class="fs-4">Hours Played:</p>
                                     </div>
-                                    <div class="col-md-auto">
-                                        <p>0</p>
+                                    <div class="row">
+                                        <p class="fs-5">0</p>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <p class="fs-4">Reason for Aborting:</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-auto">
+                                            <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Game got too
+                                                repetitive</p>
+                                            <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Game was boring</p>
 
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="col-md-auto">
-                                        Rating:
+                                        </div>
                                     </div>
-                                    <div class="col-md-auto">
-                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
-                                                class="bi bi-star"></i>
-                                            <i class="bi bi-star"></i> <i class="bi bi-star"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    Favorite Tags:
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="px-1 py-1 rounded-pill bg-info d-inline-block fs-6">Automation</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row g-3 bg-danger mt-2">
-                        <div class="col-1 d-none d-md-block">
-
-                        </div>
-                        <div class="col-9">
-                            Final Thoughts:
-                            <p>too many machines to build. would not build again. too many machines to build. would not
+                    <div class="row g-3 mt-2">
+                        <div class="offset-1 col-9">
+                            <p class="fs-4">Final Thoughts:</p>
+                            <p class="fs-6">too many machines to build. would not build again. too many machines to build. would not
                                 build again.
                                 too many machines to build. would not build again.</p>
                         </div>
                         <div class="col-2">
-                            <i class="bi bi-arrow-up-circle-fill"></i>
-                            <div>12</div>
-                            <i class="bi bi-arrow-down-circle"></i>
+                            <p><i class="bi bi-arrow-up-circle-fill"></i></p>
+                            <div><p>12</p></div>
+                            <p><i class="bi bi-arrow-down-circle"></i></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="container pb-3 my-4 bg-primary">
+                <div class="container pb-3 my-4 bg-success-subtle rounded border border-opacity-50 border-success py-3 px-1">
                     <div class="row g-3">
-                        <div class="col-1 d-none d-md-block">
-
-                        </div>
-                        <div class="col-md-2  d-none d-md-block">
+                        <div class="col-md-2 offset-md-1 d-none d-md-block">
                             <img src="../images/test-images/franksSinatraProfileIcon.png"
-                                alt="A profile picture for chromokiz" class="w-75 mx-auto">
+                                alt="A profile picture for chromokiz" class="w-75 mx-auto rounded-3 border border-2">
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-9 offset-1 offset-md-0">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <div class="col-md-auto">
-                                        Username:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>Frank's Sinatra</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6  d-none d-md-block">
-                                    <div class="col-md-auto">
-                                        Finished / Aborted Games:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>23 / 13</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6  d-none d-md-block">
-                                    <div class="col-md-auto">
-                                        Hours Played:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p>40</p>
-                                    </div>
-
+                                    <p class="fs-4">Frank's Sinatra</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="col-md-auto">
-                                        Rating:
-                                    </div>
-                                    <div class="col-md-auto">
-                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
-                                                class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    Favorite Tags:
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="px-1 py-1 rounded-pill bg-info d-inline-block fs-6">Resource Management
+                                    <p class="fs-4"><i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
                                     </p>
-                                    <p class="px-1 py-1 rounded-pill bg-info d-inline-block fs-6">Base Building</p>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6  d-none d-md-block">
+                                    <div class="row">
+                                        <p class="fs-4">Hours Played:</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="fs-5">40</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <p class="fs-4">Finished by:</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-auto">
+                                            <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Finished main quest</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row g-3 bg-success mt-2">
-                        <div class="col-1 d-none d-md-block">
-
-                        </div>
-                        <div class="col-9">
-                            Final Thoughts:
-                            <p>I really like how you can build your own base. I think that it's neat that you can build
+                    <div class="row g-3 mt-2">
+                        <div class="offset-1 col-9">
+                            <p class="fs-4">Final Thoughts:</p>
+                            <p class="fs-6">I really like how you can build your own base. I think that it's neat that you can build
                                 any
                                 way you want. I wish the tutorial was more robust.
                                 I like it more then Satisfactory. Here are more test words to make this review longer
@@ -508,9 +483,9 @@
                             </p>
                         </div>
                         <div class="col-2">
-                            <i class="bi bi-arrow-up-circle"></i>
-                            <div>16</div>
-                            <i class="bi bi-arrow-down-circle-fill"></i>
+                            <p><i class="bi bi-arrow-up-circle"></i></p>
+                            <div><p>16</p></div>
+                            <p><i class="bi bi-arrow-down-circle-fill"></i></p>
                         </div>
                     </div>
                 </div>
@@ -518,9 +493,9 @@
 
         </div>
 
-        <div id="view3" class="hidden">
+        <div id="view3" class="">
 
-            <div class="container text-center bg-secondary pt-2 pb-2 mb-4 d-none d-lg-block">
+            <div class="container text-center pt-2 pb-2 mb-4 d-none d-lg-block">
                 <div class="row g-3 pt-2 justify-content-between fs-4">
                     <div class="col-3">
                         <p>Something Simular</p>
