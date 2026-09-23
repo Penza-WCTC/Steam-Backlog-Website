@@ -4,3 +4,5 @@ When deleting review should you be able to play the game again?
 : diferent color / revised note
 : game goes back in or not
 : no difference
+
+When upvoting, how should I handle the numbers not being able to go up infinitely
