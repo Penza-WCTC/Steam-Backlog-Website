@@ -151,6 +151,10 @@ const app = createApp({
                     communityVote: 0,
                 }
             }
+        },
+
+        removeItem(review){
+            this.reviewList.splice(this.reviewList.indexOf(review),1);
         }
     },
 
