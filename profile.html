@@ -28,19 +28,19 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="app">
 
         <div class="container text-start pb-3 mb-4 border border-2 py-3 rounded bg-light">
             <div class="row g-3">
                 <div class="col-md-4">
-                    <img src="./images/test-images/chromokizProfileIcon.png"
+                    <img src="./images/test-images/testUserProfileIcon.png"
                         class="w-50 mx-auto d-block rounded rounded-3" alt="Factorio's Steam Cover">
                 </div>
 
                 <div class="col-md-8 d-flex flex-column justify-content-evenly">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p class="fs-4">chromokiz</p>
+                            <p class="fs-4">testUser</p>
                         </div>
                     </div>
                     <div class="row">
@@ -54,10 +54,10 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="row">
-                                <p class="fs-4">Finished / Aborted:</p>
+                                <p class="fs-4">Currently Playing:</p>
                             </div>
                             <div class="row">
-                                <p class="fs-5">12 / 33</p>
+                                <p class="fs-5">Stardew Valley</p>
                             </div>
                         </div>
                     </div>
@@ -71,19 +71,18 @@
             <button class="btn btn-success" type="submit">Search</button>
         </form>
 
-        <div>
-            <div class="container pb-3 my-4 bg-danger-subtle rounded border border-opacity-50 border-danger py-3">
+        <div v-for="review in reviewList">
+            <div v-if="review.userID === '123123123123123123'"
+                :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': !review.finished, 'border-success': review.finished, 'py-3':true, 'px-1':true, 'bg-danger-subtle': !review.finished, 'bg-success-subtle': review.finished}">
                 <div class="offset-1">
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <p class="fs-4">Factorio Review</p>
+                            <p class="fs-4">{{review.gameName}} Review</p>
                         </div>
                         <div class="col-md-6">
-                            <p class="fs-4"><i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
+                            <p class="fs-4"></i>
+                                <i class="bi bi-star-fill ms-1" v-for="n in review.ratingNumber"></i>
+                                <i class="bi bi-star ms-1" v-for="n in (review.ratingNumber-5)*-1" v-if="(review.ratingNumber-5)*-1"></i>
                             </p>
                         </div>
                     </div>
@@ -93,88 +92,26 @@
                                 <p class="fs-5">Hours Played:</p>
                             </div>
                             <div class="row">
-                                <p class="fs-6">0</p>
+                                <p class="fs-6">{{review.hours}}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                                <p class="fs-5">Reason for Aborting:</p>
+                                <p class="fs-5">{{review.finished ? "Finished by" : "Reason for Aborting"}}</p>
                             </div>
                             <div class="row">
                                 <div class="col-md-auto">
-                                    <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Game got too
-                                        repetitive</p>
-                                    <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Game was boring</p>
-
+                                    <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block"
+                                                v-for="userReasons in review.reasons">{{userReasons}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
+                    
                     <div class="mt-2 pe-md-5">
                         <div class="row">
-                            <p class="fs-5">Final Thoughts:</p>
-                            <p class="fs-6">too many machines to build. would not build again. too many machines to
-                                build.
-                                would
-                                not
-                                build again.
-                                too many machines to build. would not build again.</p>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <div class="p-2"><i class="bi bi-trash-fill"></i></div>
-                            <div class="p-2"><i class="bi bi-pencil-fill"></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container pb-3 my-4 bg-success-subtle rounded border border-opacity-50 border-success py-3">
-                <div class="offset-1">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <p class="fs-4">Rain World Review</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="fs-4"><i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row g-3">
-                        <div class="col-md-6  d-none d-md-block">
-                            <div class="row">
-                                <p class="fs-5">Hours Played:</p>
-                            </div>
-                            <div class="row">
-                                <p class="fs-6">37</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <p class="fs-5">Finished By:</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-auto">
-                                    <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">Completed Main Quest
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="mt-2 pe-md-5">
-                        <div class="row">
-                            <p class="fs-5">Final Thoughts:</p>
-                            <p class="fs-6">This has now become my most favourite game of all time... From the visuals,
-                                the beautiful backgrounds, the different predators that roam around the world and the
-                                cute lil adorable slugcat you play as gives an indescribable feeling of warmth and
-                                awe... (a alot of fear too). You are just a small piece of a larger puzzle.. I will
-                                never forget that wonderful feeling...</p>
+                            <p class="fs-4">Final Thoughts:</p>
+                            <p class="fs-6">{{review.review}}</p>
                         </div>
                         <div class="d-flex justify-content-end">
                             <div class="p-2"><i class="bi bi-trash-fill"></i></div>
@@ -187,5 +124,12 @@
     </div>
     </div>
 
+    <script type="module">
+
+        import app from './js/app.js';
+
+        app.mount('#app');
+
+    </script>
 
 </html>
