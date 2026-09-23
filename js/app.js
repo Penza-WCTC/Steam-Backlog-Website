@@ -5,6 +5,7 @@ const app = createApp({
         return {
             userPositiveTag: '',
             userNegativeTags: [],
+            editingReview: '',
             newReview: {
                 gameID: '427520', //this should be set when user selects a game
                 gameName: '', //this should be uneeded when we get api
@@ -16,6 +17,7 @@ const app = createApp({
                 username: "testUser", //this should be added when user signs in
                 userID: '123123123123123123',
                 communityVote: 0,
+                editing: false,
             },
             reviewList: [
                 {
@@ -29,6 +31,7 @@ const app = createApp({
                     username: 'chromokiz', //eventually use user id to get this
                     userID: '76561198449377399',
                     communityVote: 10,
+                    editing: false
                 },
 
                 {
@@ -42,6 +45,7 @@ const app = createApp({
                     username: 'FranksSinatra',
                     userID: '76561199086724709',
                     communityVote: 4,
+                    editing: false
                 },
 
                 {
@@ -55,6 +59,7 @@ const app = createApp({
                     username: 'testUser',
                     userID: '123123123123123123',
                     communityVote: 4,
+                    editing: false
                 },
 
                 {
@@ -62,12 +67,13 @@ const app = createApp({
                     gameName: 'Core Keeper',
                     ratingNumber: 2,
                     hours: 26,
-                    reasons: ['Game was boring','Game got too repetitive'],
+                    reasons: ['Game was boring', 'Game got too repetitive'],
                     finished: false,
                     review: "Core Keeper combines many gameplay elements from different genres in one game. That makes it a lot of fun and keeps you hooked. Unfortunately, in the endgame you notice that all these different areas ultimately lead nowhere. One example is the automation with conveyor belts. What do I actually need thousands of resources for that I produce there through automation? They pile up by the thousands in the box and barely help you in the further course of the game. The automated farms are fun, but in the end they aren't really needed.",
                     username: 'testUser',
                     userID: '123123123123123123',
                     communityVote: 4,
+                    editing: false
                 },
             ],
             // userList: [
@@ -121,7 +127,7 @@ const app = createApp({
 
             reviewList.forEach(review => {
                 if (review.username === username) {
-                    if( review.gameID === id){
+                    if (review.gameID === id) {
                         returner = true;
                     }
                 }
@@ -129,7 +135,6 @@ const app = createApp({
 
             return returner
         },
-
 
         addItem() {
 
@@ -149,12 +154,18 @@ const app = createApp({
                     username: "testUser",
                     userID: '123123123123123123',
                     communityVote: 0,
+                    editing: false
                 }
             }
         },
 
-        removeItem(review){
-            this.reviewList.splice(this.reviewList.indexOf(review),1);
+        editReview(review) {
+            review.review = this.editingReview;
+            review.editing = false;
+        },
+
+        removeItem(review) {
+            this.reviewList.splice(this.reviewList.indexOf(review), 1);
         }
     },
 

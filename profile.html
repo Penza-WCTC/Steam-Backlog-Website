@@ -82,7 +82,8 @@
                         <div class="col-md-6">
                             <p class="fs-4"></i>
                                 <i class="bi bi-star-fill ms-1" v-for="n in review.ratingNumber"></i>
-                                <i class="bi bi-star ms-1" v-for="n in (review.ratingNumber-5)*-1" v-if="(review.ratingNumber-5)*-1"></i>
+                                <i class="bi bi-star ms-1" v-for="n in (review.ratingNumber-5)*-1"
+                                    v-if="(review.ratingNumber-5)*-1"></i>
                             </p>
                         </div>
                     </div>
@@ -102,21 +103,30 @@
                             <div class="row">
                                 <div class="col-md-auto">
                                     <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block"
-                                                v-for="userReasons in review.reasons">{{userReasons}}</p>
+                                        v-for="userReasons in review.reasons">{{userReasons}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-2 pe-md-5">
-                        <div class="row">
+                        <div class="row" v-if="!review.editing">
                             <p class="fs-4">Final Thoughts:</p>
                             <p class="fs-6">{{review.review}}</p>
+                            <div class="d-flex justify-content-end">
+                                <p class="p-2"><i class="bi bi-trash-fill pointer" @click="removeItem(review)"></i></p>
+                                <p class="p-2"><i class="bi bi-pencil-fill pointer" @click="review.editing = !review.editing, editingReview = review.review"></i></p>
+                            </div>
                         </div>
-                        <div class="d-flex justify-content-end">
-                            <p class="p-2"><i class="bi bi-trash-fill" @click="removeItem(review)"></i></p>
-                            <p class="p-2"><i class="bi bi-pencil-fill"></i></p>
-                        </div>
+
+                        <form class="row" @submit.prevent="editReview(review)" v-if="review.editing">
+                            <p class="fs-4">Edit Your Thoughts:</p>
+                            <textarea name="editReview" v-model="editingReview">{{editingReview}}</textarea>
+                            <div class="mt-2 justify-content-end d-flex">
+                                <button type="submit" class="btn btn-primary mx-2" >Submit</button>
+                                <button type="button" class="btn btn-danger" @click="review.editing = !review.editing">Cancel</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

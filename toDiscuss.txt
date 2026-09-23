@@ -1,0 +1,6 @@
+Should I keep the review cards red - green, or make it so outline determines if they completed and the main color is based off star count
+
+When deleting review should you be able to play the game again?
+: diferent color / revised note
+: game goes back in or not
+: no difference
