@@ -5,7 +5,10 @@ const app = createApp({
         return {
             userPositiveTag: '',
             userNegativeTags: [],
-            editingReview: '',
+            editingReview: {
+                review: '',
+                ratingNumber: 0,
+            },
             newReview: {
                 gameID: '427520', //this should be set when user selects a game
                 gameName: 'Factorio', //this should be uneeded when we get api
@@ -160,7 +163,8 @@ const app = createApp({
         },
 
         editReview(review) {
-            review.review = this.editingReview;
+            review.review = this.editingReview.review;
+            review.ratingNumber = this.editingReview.ratingNumber;
             review.editing = false;
         },
 

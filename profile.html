@@ -79,12 +79,29 @@
                         <div class="col-md-6">
                             <p class="fs-4">{{review.gameName}} Review</p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" v-if="!review.editing">
                             <p class="fs-4"></i>
                                 <i class="bi bi-star-fill ms-1" v-for="n in review.ratingNumber"></i>
                                 <i class="bi bi-star ms-1" v-for="n in (review.ratingNumber-5)*-1"
                                     v-if="(review.ratingNumber-5)*-1"></i>
                             </p>
+                        </div>
+                        <div class="col-md-6" v-if="review.editing">
+                            <p class="fs-4 text-secondary">
+                            <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':editingReview.ratingNumber > 0, 'bi-star':editingReview.ratingNumber == 0,  'ms-1':true}"
+                                @click="editingReview.ratingNumber = 1"></i>
+
+                            <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':editingReview.ratingNumber > 1, 'bi-star':editingReview.ratingNumber <= 1,  'ms-1':true}"
+                                @click="editingReview.ratingNumber = 2"></i>
+
+                            <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':editingReview.ratingNumber > 2, 'bi-star':editingReview.ratingNumber <= 2,  'ms-1':true}"
+                                @click="editingReview.ratingNumber = 3"></i>
+
+                            <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':editingReview.ratingNumber > 3, 'bi-star':editingReview.ratingNumber <= 3,  'ms-1':true}"
+                                @click="editingReview.ratingNumber = 4"></i>
+
+                            <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':editingReview.ratingNumber > 4, 'bi-star':editingReview.ratingNumber <= 4,  'ms-1':true}"
+                                @click="editingReview.ratingNumber = 5"></i></p>
                         </div>
                     </div>
                     <div class="row g-3">
@@ -115,16 +132,20 @@
                             <p class="fs-6">{{review.review}}</p>
                             <div class="d-flex justify-content-end">
                                 <p class="p-2"><i class="bi bi-trash-fill pointer" @click="removeItem(review)"></i></p>
-                                <p class="p-2"><i class="bi bi-pencil-fill pointer" @click="review.editing = !review.editing, editingReview = review.review"></i></p>
+                                <p class="p-2"><i class="bi bi-pencil-fill pointer"
+                                        @click="review.editing = !review.editing, editingReview.review = review.review, editingReview.ratingNumber = review.ratingNumber"></i>
+                                </p>
                             </div>
                         </div>
 
                         <form class="row" @submit.prevent="editReview(review)" v-if="review.editing">
                             <p class="fs-4">Edit Your Thoughts:</p>
-                            <textarea name="editReview" v-model="editingReview">{{editingReview}}</textarea>
+                            <textarea name="editReview"
+                                v-model="editingReview.review">{{editingReview.review}}</textarea>
                             <div class="mt-2 justify-content-end d-flex">
-                                <button type="submit" class="btn btn-primary mx-2" >Submit</button>
-                                <button type="button" class="btn btn-danger" @click="review.editing = !review.editing">Cancel</button>
+                                <button type="submit" class="btn btn-primary mx-2">Submit</button>
+                                <button type="button" class="btn btn-danger"
+                                    @click="review.editing = !review.editing">Cancel</button>
                             </div>
                         </form>
                     </div>
