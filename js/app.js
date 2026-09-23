@@ -8,7 +8,7 @@ const app = createApp({
             editingReview: '',
             newReview: {
                 gameID: '427520', //this should be set when user selects a game
-                gameName: '', //this should be uneeded when we get api
+                gameName: 'Factorio', //this should be uneeded when we get api
                 ratingNumber: 0,
                 hours: 36.6, //eventually can get this data with API call but 4 now its hardcoded :(
                 reasons: [],
@@ -174,11 +174,18 @@ const app = createApp({
     },
 
     mounted: function () {
-
+        if(localStorage.getItem('reviewList')){
+            this.reviewList = JSON.parse(localStorage.getItem('reviewList'));
+        }
     },
 
     watch: {
-
+        reviewList:{
+            handler(){
+                localStorage.setItem('reviewList', JSON.stringify(this.reviewList));
+            },
+            deep: true,
+        },
     },
 });
 
