@@ -1,9 +1,9 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-import CarouselImage from "./components/CarouselImage.js";
+import Carousel from "./components/Carousel.js";
 
 const app = createApp({
     components: {
-        CarouselImage,
+        Carousel,
     },
 
     data: function () {
