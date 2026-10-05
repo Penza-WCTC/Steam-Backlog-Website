@@ -1,6 +1,11 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+import CarouselImage from "./components/CarouselImage.js";
 
 const app = createApp({
+    components: {
+        CarouselImage,
+    },
+
     data: function () {
         return {
             userPositiveTag: '',
