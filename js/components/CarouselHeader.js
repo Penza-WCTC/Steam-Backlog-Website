@@ -5,12 +5,12 @@ const CarouselHeader = {
         Carousel,
     },
 
-
     data: function () {
         return {
-            imageIdArray: ["881100", "753640", "1390190", "1000010", "250900"],
+            activeGameArray: [],
 
             tempFullLibrary: [
+                "881100","753640","1390190","1000010","1000010",
                 "400",
                 "440",
                 "500",
@@ -37,8 +37,22 @@ const CarouselHeader = {
                 "418370",
                 "582010"],
 
-            rerollsLeft: 5
+            rerollsLeft: this.rerollsAllowed +1
         };
+    },
+
+    computed: {
+        imageIdArray(){
+            const tempArray = [];
+
+            let counter = 0;
+            this.activeGameArray.forEach(game => {
+                tempArray[counter] = game.appId;
+                counter++;
+            });
+            
+            return tempArray;
+        }
     },
 
     props: {
@@ -50,22 +64,40 @@ const CarouselHeader = {
             if(this.rerollsLeft >= 1){
                 if(this.tempFullLibrary.length >= 5){
                     for (let i = 0; i < 5; i++) {
-                        this.imageIdArray[i] = this.tempFullLibrary.splice(Math.floor(Math.random() * (this.tempFullLibrary.length)), 1)[0];
+                        this.activeGameArray[i] = this.createGameObject(this.tempFullLibrary.splice(Math.floor(Math.random() * (this.tempFullLibrary.length)), 1)[0]);
                     }
                 }
                 this.rerollsLeft --;
             }
         },
 
+        createGameObject(id) {
+            const gameObject = {
+                appId: ""+id,
+                name: "tempName"+id,
+                tags: ["temp1"+id, "temp2"+id, "temp3"+id],
+                achievementNumber: 10,
+                shortDescription: "This is "+id+"'s temp description!",
+                releaseDate: "August 23rd",
+                hoursPlayed: 0,
+            }
+
+            return gameObject
+        },
+
         shiftListLeft() {
-            const holder = this.imageIdArray.shift();
-            this.imageIdArray.push(holder);
+            const holder = this.activeGameArray.shift();
+            this.activeGameArray.push(holder);
         },
 
         shiftListRight() {
-            const holder = this.imageIdArray.pop();
-            this.imageIdArray.unshift(holder);
+            const holder = this.activeGameArray.pop();
+            this.activeGameArray.unshift(holder);
         }
+    },
+
+    mounted() {
+        this.getRandomGames()
     },
 
     template: `
