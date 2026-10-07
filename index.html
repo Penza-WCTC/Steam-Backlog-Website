@@ -193,68 +193,14 @@
 
         <div id="view2" v-if="newReview.gameName">
             <div class="container text-center pt-2 pb-1 mb-4">
-                <p class="fs-4">Discuss Below!</p>
+                <p class="fs-4">Rate Reviews Below!</p>
                 <hr>
             </div>
 
             <div class="container text-start" v-for="review in reviewList">
                 <div v-if="review.gameId === newReview.gameId"
                     :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-danger-subtle': review.ratingNumber <3, 'bg-success-subtle': review.ratingNumber >2}">
-                    <div class="row g-3">
-                        <div class="col-md-2 offset-md-1 d-none d-md-block">
-                            <img :src="`./images/test-images/${review.userName}ProfileIcon.png`"
-                                :alt="`A profile picture for ${review.userName}`"
-                                class="w-75 mx-auto border border-2 rounded-3">
-                        </div>
-                        <div class="col-md-9 offset-1 offset-md-0">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <p class="fs-4">{{review.userName}}</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="fs-4">
-                                        <i class="bi bi-star-fill ms-1" v-for="n in review.ratingNumber"></i>
-                                        <i class="bi bi-star ms-1" v-for="n in (review.ratingNumber-5)*-1"
-                                            v-if="(review.ratingNumber-5)*-1"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6  d-none d-md-block">
-                                    <div class="row">
-                                        <p class="fs-4">Hours Played:</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="fs-5">{{review.hoursPlayed}}</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-auto">
-                                            <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">{{review.completion}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row g-3 mt-2">
-                        <div class="offset-1 col-9">
-                            <p class="fs-4">Final Thoughts:</p>
-                            <p class="fs-6">{{review.review}}</p>
-                        </div>
-                        <div class="col-2">
-                            <p><i @click="review.communityVote++"
-                                    :class="{'bi':true, 'pointer':true, 'bi-arrow-up-circle':true}"></i>
-                            </p>
-                            <div>
-                                <p>{{review.communityVote}}</p>
-                            </div>
-                            <p><i @click="review.communityVote--"
-                                    :class="{'bi':true, 'pointer':true, 'bi-arrow-down-circle':true}"></i>
-                            </p>
-                        </div>
-                    </div>
+                    <review-list-item :review="review"></review-list-item>
                 </div>
             </div>
 
