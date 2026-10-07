@@ -65,7 +65,7 @@ const ReviewListItem = {
                 </div>
             </div>
         </div>
-    </div>
+    
     `
 }
 

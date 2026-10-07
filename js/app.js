@@ -22,6 +22,8 @@ const app = createApp({
                 hoursPlayed: 36.3,
             },
 
+            editingReview: {},
+
             newReview: {},
 
             currentUser: {
