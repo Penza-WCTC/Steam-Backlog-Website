@@ -1,9 +1,9 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-import CarouselHeader from "./components/CarouselHeader.js";
+import GameSelectorSection from "./components/GameSelectorSection.js";
 
 const app = createApp({
     components: {
-        CarouselHeader,
+        GameSelectorSection
     },
 
     data: function () {
@@ -84,35 +84,6 @@ const app = createApp({
                     editing: false
                 },
             ],
-            // userList: [
-            //     {
-            //         username: 'chromokiz',
-            //         id: '76561198449377399',
-            //         gamesPlayed: [
-            //             '1621690',
-            //             '312520'
-            //         ],
-            //         currentGame: '413150'
-            //     },
-            //     {
-            //         username: 'FranksSinatra',
-            //         id: '76561199086724709',
-            //         gamesPlayed: [
-            //             '1002300',
-            //             '250900'
-            //         ],
-            //         currentGame: '881100'
-            //     },
-            //     {
-            //         username: 'testUser',
-            //         id: '123123123123123123',
-            //         gamesPlayed: [
-            //             '1002300',
-            //             '1621690'
-            //         ],
-            //         currentGame: '427520'
-            //     }
-            // ]
         }
     },
 

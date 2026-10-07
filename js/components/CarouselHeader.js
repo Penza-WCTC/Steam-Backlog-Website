@@ -74,11 +74,11 @@ const CarouselHeader = {
         createGameObject(id) {
             const gameObject = {
                 appId: ""+id,
-                name: "tempName"+id,
-                tags: ["temp1"+id, "temp2"+id, "temp3"+id],
+                name: "tempName-"+id,
+                tags: ["temp1-"+id, "temp2-"+id, "temp3-"+id],
                 achievementNumber: 10,
-                shortDescription: "This is "+id+"'s temp description!",
-                releaseDate: "August 23rd",
+                shortDescription: "This is "+id+"'s temp description! Normally Steam descriptions are about three sentances. Here is one more sentance so we can have a three sentance description!",
+                releaseDate: "imagineThisIsTheDate-"+id,
                 hoursPlayed: 0,
             }
 
@@ -98,6 +98,15 @@ const CarouselHeader = {
 
     mounted() {
         this.getRandomGames()
+    },
+
+    watch: {
+        activeGameArray:{
+            handler(newValue, oldValue){
+                this.$emit('save-this', newValue[0]);
+            },
+            deep: true
+        }
     },
 
     template: `
