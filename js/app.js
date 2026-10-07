@@ -13,7 +13,7 @@ const app = createApp({
             activeGame: {
                 appId: "427520",
                 name: "Factorio",
-                tags: ["1", "1", "1"],
+                tags: ["tempTag1", "tempTag2", "tempTag3"],
                 achievementNumber: 30,
                 shortDescription: "temp Description",
                 releaseDate: "imagineThisIsTheDate",
@@ -104,10 +104,15 @@ const app = createApp({
             return returner
         },
 
+        clearReview(){
+            this.newReview = {};
+        },
+
         addReview(review) {
+            this.newReview = review;
             this.reviewList.push(review);
 
-            this.newReview = {}
+            this.activeGame = {}
         },
 
         editReview(review) {

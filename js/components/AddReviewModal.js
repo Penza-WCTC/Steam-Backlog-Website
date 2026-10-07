@@ -81,14 +81,15 @@ const AddReviewModal = {
                 <div class="modal-body">
                     <form class="w-100 d-flex flex-column justify-content-evenly" @submit.prevent="addReview">
 
+                        <label class="fs-5"> How far did you get?
                         <select class="form-select form-select-md mb-2" aria-label="Default select example" v-model="reviewObject.completion">
-                            <option selected>How far did you get?</option>
                             <option value="1">Completed Tutorial</option>
                             <option value="2">Started Main Goal</option>
                             <option value="3">Fully Completed Main Goal</option>
                             <option value="4">Completed Main Goal and Started Sidequest</option>
                             <option value="5">100%'d Game</option>
                         </select>
+                        </label>
 
                         <div class="mb-2">
 

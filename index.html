@@ -30,22 +30,22 @@
     </nav>
 
     <div id="app" class="container">
-        <div id="view1" class="">
+        <div id="view1" v-if="activeGame.appId">
 
             <div class="container text-start pb-3 mb-4">
                 <div class="px-3 pb-3 border border-2 row g-3 bg-light rounded">
                     <div class="col-md-4">
-                        <img src="http://shared.steamstatic.com/store_item_assets/steam/apps/427520/library_600x900.jpg"
-                            class="img-fluid mx-auto d-block rounded" alt="Factorio's Steam Cover">
+                        <img :src="`http://shared.steamstatic.com/store_item_assets/steam/apps/${activeGame.appId}/library_600x900.jpg`"
+                            class="img-fluid mx-auto d-block rounded" :alt="`${activeGame.name}'s Steam Cover`">
                     </div>
 
                     <div class="col-md-8 d-flex flex-column justify-content-evenly">
                         <div class="row">
                             <div class="col-sm-6">
-                                <p class="fs-4">Factorio</p>
+                                <p class="fs-4">{{activeGame.name}}</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="fs-4">August 14, 2020</p>
+                                <p class="fs-4">{{activeGame.releaseDate}}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -54,7 +54,7 @@
                                     <p class="fs-5">Current Playtime:</p>
                                 </div>
                                 <div class="row">
-                                    <p class="fs-6">36.3 Hrs</p>
+                                    <p class="fs-6">{{activeGame.hoursPlayed}} Hrs</p>
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -71,10 +71,7 @@
                                 <p class="fs-5">Tags:</p>
                             </div>
                             <div class="col-12 fs-6">
-                                <p class="px-2 py-1 rounded-pill bg-info d-inline-block">Automation</p>
-                                <p class="px-2 py-1 rounded-pill bg-info d-inline-block">Base Building</p>
-                                <p class="px-2 py-1 rounded-pill bg-info d-inline-block">Resource Management</p>
-                                <p class="px-2 py-1 rounded-pill bg-info d-inline-block">Crafting</p>
+                                <p class="px-2 py-1 rounded-pill bg-info d-inline-block me-1" v-for="tag in activeGame.tags">{{tag}}</p>
                             </div>
                         </div>
                     </div>
@@ -194,15 +191,14 @@
 
         </div>
 
-
-        <div id="view2" class="">
+        <div id="view2" v-if="newReview.gameName">
             <div class="container text-center pt-2 pb-1 mb-4">
-                <p class="fs-4">Scroll down to see all reviews!</p>
+                <p class="fs-4">Discuss Below!</p>
                 <hr>
             </div>
 
             <div class="container text-start" v-for="review in reviewList">
-                <div v-if="review.gameId === '427520'"
+                <div v-if="review.gameId === newReview.gameId"
                     :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-danger-subtle': review.ratingNumber <3, 'bg-success-subtle': review.ratingNumber >2}">
                     <div class="row g-3">
                         <div class="col-md-2 offset-md-1 d-none d-md-block">
@@ -262,13 +258,16 @@
                 </div>
             </div>
 
+            <div class="d-flex justify-content-end sticky-bottom ">
+                <button @click="clearReview" class="button btn btn-primary">Find your Next Game!</button>
+            </div>
         </div>
 
-        <game-selector-section @save-this-game="setActiveGame"></game-selector-section>
+        <game-selector-section @save-this-game="setActiveGame" v-if="!activeGame.appId && !newReview.gameName"></game-selector-section>
     </div>
     </div>
 
-    <footer class="d-flex justify-content-center bg-secondary pt-2">
+    <footer class="d-flex justify-content-center bg-secondary pt-2 mt-5">
         <p>
             Steam Backlog - Kyle Penza <i class="bi bi-c-circle"></i>2025
         </p>
