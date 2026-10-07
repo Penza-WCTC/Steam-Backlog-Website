@@ -80,6 +80,7 @@ const GameSelectorSection = {
         <button class="button btn btn-success" @click="$emit('save-this-game',activeGame)">Select This Game!</button>
     </div>
 </div>
+    
     `
 };
 

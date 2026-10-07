@@ -184,213 +184,36 @@
                 </div>
             </div>
 
-            <div class="container text-center py-3">
-                <div class="row">
-                    <div class="col-md-6 mt-1">
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#finishedModal">
-                            Game Finished
-                        </button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Write Review and Find Next Game
+            </button>
 
-                        <div class="modal fade" id="finishedModal" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="finishedModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered text-start">
-                                <div class="modal-content container">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="finishedModalLabel">Quick Survey:</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Everyone has a different definition of "done", how did you complete your
-                                            game?</p>
-                                        <form @submit.prevent="addTags(userPositiveTag)">
-                                            <div class="row g-3">
-                                                <div class="mb-3 form-radio col-6">
-                                                    <label class="form-radio-label">
-                                                        <input type="radio" class="form-radio-input"
-                                                            name="completionReason" value="Fully Completed"
-                                                            v-model="userPositiveTag">
-                                                        Fully Completed</label>
-                                                </div>
-                                                <div class="mb-3 form-radio col-6">
-                                                    <label class="form-radio-label">
-                                                        <input type="radio" class="form-radio-input"
-                                                            name="completionReason" value="Completed Main Quest"
-                                                            v-model="userPositiveTag">
-                                                        Completed Main
-                                                        Quest</label>
-                                                </div>
-                                            </div>
+            <!-- Modal -->
+            <add-review-modal @add-review="addReview" :user-object="currentUser" :active-game="activeGame"></add-review-modal>
 
-                                            <div class="row g-3">
-                                                <div class="mb-3 form-radio col-6">
-                                                    <label class="form-radio-label">
-                                                        <input type="radio" class="form-radio-input"
-                                                            name="completionReason" value="Got an Ending"
-                                                            v-model="userPositiveTag">
-                                                        Got an
-                                                        Ending</label>
-                                                </div>
-                                                <div class="mb-3 form-radio col-6">
-                                                    <label class="form-radio-label">
-                                                        <input type="radio" class="form-radio-input"
-                                                            name="completionReason" value="Other"
-                                                            v-model="userPositiveTag">
-                                                        Other</label>
-                                                </div>
-                                            </div>
-
-                                            <button type="submit" class="btn btn-primary move-on-1"
-                                                data-bs-dismiss="modal"
-                                                @click="newReview.finished = true">Submit</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mt-1">
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#abortedModal">
-                            Game Aborted
-                        </button>
-
-                        <div class="modal fade" id="abortedModal" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="abortedModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered text-start">
-                                <div class="modal-content container">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="abortedModalLabel">Quick Survey:</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>What are some factors that led to you not wanting to continue this game?</p>
-                                        <form @submit.prevent="addTags(userNegativeTags)">
-                                            <div class="row g-3">
-                                                <div class="col-6">
-                                                    <div class="mb-3 form-checkbox">
-                                                        <label class="form-checkbox-label">
-                                                            <input type="checkbox" class="form-checkbox-input"
-                                                                value="Game got too repetitive"
-                                                                v-model="userNegativeTags">
-                                                            Game got too
-                                                            repetitive.</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="mb-3 form-checkbox">
-                                                        <label class="form-checkbox-label">
-                                                            <input type="checkbox" class="form-checkbox-input"
-                                                                value="Game got boring" v-model="userNegativeTags">
-                                                            Game got
-                                                            boring.</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row g-3">
-                                                <div class="col-6">
-                                                    <div class="mb-3 form-checkbox">
-                                                        <label class="form-checkbox-label">
-                                                            <input type="checkbox" class="form-checkbox-input"
-                                                                value="I disliked the genre" v-model="userNegativeTags">
-                                                            I disliked
-                                                            the genre.</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="mb-3 form-checkbox">
-                                                        <label class="form-checkbox-label">
-                                                            <input type="checkbox" class="form-checkbox-input"
-                                                                value="Other" v-model="userNegativeTags">
-                                                            Other</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary move-on-1"
-                                                data-bs-dismiss="modal"
-                                                @click="newReview.finished = false">Submit</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
 
 
         <div id="view2" class="">
-            <div class="container text-start pb-3 mb-4">
-                <div
-                    :class="{'px-3':true, 'pb-3':true, 'border':true, 'border-1':true, 'row':true, 'g-3':true, 'bg-light':true, 'rounded':true, 'border-danger': !newReview.finished, 'border-success': newReview.finished}">
-                    <div class="col-md-4">
-                        <img src="http://shared.steamstatic.com/store_item_assets/steam/apps/427520/library_600x900.jpg"
-                            class="img-fluid mx-auto d-block rounded" alt="Factorio's Steam Cover">
-                    </div>
-
-                    <div class="col-md-8 fs-4 d-flex">
-                        <form class="w-100 d-flex  flex-column justify-content-evenly" @submit.prevent="addItem">
-                            <div class="row">
-                                <div class="col-sm-5 text-nowrap">
-                                    Rating:
-                                </div>
-
-                                <div class="col">
-                                    <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':newReview.ratingNumber > 0, 'bi-star':newReview.ratingNumber == 0,  'ms-2':true}"
-                                        @click="newReview.ratingNumber = 1"></i>
-
-                                    <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':newReview.ratingNumber > 1, 'bi-star':newReview.ratingNumber <= 1,  'ms-2':true}"
-                                        @click="newReview.ratingNumber = 2"></i>
-
-                                    <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':newReview.ratingNumber > 2, 'bi-star':newReview.ratingNumber <= 2,  'ms-2':true}"
-                                        @click="newReview.ratingNumber = 3"></i>
-
-                                    <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':newReview.ratingNumber > 3, 'bi-star':newReview.ratingNumber <= 3,  'ms-2':true}"
-                                        @click="newReview.ratingNumber = 4"></i>
-
-                                    <i :class="{'bi':true, 'pointer':true, 'bi-star-fill':newReview.ratingNumber > 4, 'bi-star':newReview.ratingNumber <= 4,  'ms-2':true}"
-                                        @click="newReview.ratingNumber = 5"></i>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <label for="finalThoughts">Final Thoughts:</label>
-                                <textarea name="finalThoughts" id="finalThoughts" class="fs-6"
-                                    v-model="newReview.review"></textarea>
-                            </div>
-
-                            <div class="row">
-                                <button type="submit" class="btn btn-primary move-on-2">Submit Review and Find your Next
-                                    Game!</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
             <div class="container text-center pt-2 pb-1 mb-4">
                 <p class="fs-4">Scroll down to see all reviews!</p>
                 <hr>
             </div>
 
             <div class="container text-start" v-for="review in reviewList">
-                <div v-if="review.gameID === '427520'"
-                    :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': !review.finished, 'border-success': review.finished, 'py-3':true, 'px-1':true, 'bg-danger-subtle': !review.finished, 'bg-success-subtle': review.finished}">
+                <div v-if="review.gameId === '427520'"
+                    :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-danger-subtle': review.ratingNumber <3, 'bg-success-subtle': review.ratingNumber >2}">
                     <div class="row g-3">
                         <div class="col-md-2 offset-md-1 d-none d-md-block">
-                            <img :src="`./images/test-images/${review.username}ProfileIcon.png`"
-                                :alt="`A profile picture for ${review.username}`"
+                            <img :src="`./images/test-images/${review.userName}ProfileIcon.png`"
+                                :alt="`A profile picture for ${review.userName}`"
                                 class="w-75 mx-auto border border-2 rounded-3">
                         </div>
                         <div class="col-md-9 offset-1 offset-md-0">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <p class="fs-4">{{review.username}}</p>
+                                    <p class="fs-4">{{review.userName}}</p>
                                 </div>
                                 <div class="col-md-6">
                                     <p class="fs-4">
@@ -406,17 +229,13 @@
                                         <p class="fs-4">Hours Played:</p>
                                     </div>
                                     <div class="row">
-                                        <p class="fs-5">{{review.hours}}</p>
+                                        <p class="fs-5">{{review.hoursPlayed}}</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <p class="fs-4">{{review.finished ? "Finished by" : "Reason for Aborting"}}:</p>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-auto">
-                                            <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block"
-                                                v-for="userReasons in review.reasons">{{userReasons}}</p>
+                                            <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">{{review.completion}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -445,8 +264,8 @@
 
         </div>
 
-        <game-selector-section @save-this-game="newValue => console.log(newValue)"></game-selector-section>
-
+        <game-selector-section @save-this-game="setActiveGame"></game-selector-section>
+    </div>
     </div>
 
     <footer class="d-flex justify-content-center bg-secondary pt-2">
@@ -457,8 +276,6 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<script src="../js/mover.js"></script>
 
 <script type="module">
 
