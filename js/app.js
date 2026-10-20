@@ -2,12 +2,14 @@ import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import GameSelectorSection from "./components/GameSelectorSection.js";
 import AddReviewModal from "./components/AddReviewModal.js";
 import ReviewListItem from "./components/ReviewListItem.js";
+import SteamImage from "./components/SteamImage.js";
 
 const app = createApp({
     components: {
         GameSelectorSection,
         AddReviewModal,
         ReviewListItem,
+        SteamImage,
     },
 
     data: function () {
