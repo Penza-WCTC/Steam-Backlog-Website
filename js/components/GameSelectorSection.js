@@ -1,9 +1,9 @@
-import CarouselHeader from "./CarouselHeader.js";
+import SteamCarouselHeader from "./SteamCarouselHeader.js";
 import GameDescription from "./GameDescription.js";
 
 const GameSelectorSection = {
     components:{
-        CarouselHeader,
+        SteamCarouselHeader,
         GameDescription
     },
 
@@ -22,7 +22,7 @@ const GameSelectorSection = {
     template: `
     <div class="container text-start pb-3 mb-4 ">
         <div class=" px-3 pb-3 border border-2 row g-3 bg-light rounded">
-            <carousel-header :rerolls-allowed="5" @save-this="saveNewData"></carousel-header>
+            <steam-carousel-header :rerolls-allowed="5" @save-this="saveNewData"></steam-carousel-header>
 
             <game-description :active-game="activeGame"></game-description>
 

@@ -1,13 +1,15 @@
-import Carousel from "./Carousel.js";
+import ImageCarousel from "./ImageCarousel.js";
+import SteamImage from "./SteamImage.js";
 
-const CarouselHeader = {
+const SteamCarouselHeader = {
     components: {
-        Carousel,
+        ImageCarousel,
+        SteamImage,
     },
 
     data: function () {
         return {
-            activeGameArray: [],
+            activeGameArray: [{name: "test"},{name: "test"},{name: "test"},{name: "test"},{name: "test"}],
 
             tempFullLibrary: [
                 "881100","753640","1390190","1000010","1000010",
@@ -42,7 +44,7 @@ const CarouselHeader = {
     },
 
     computed: {
-        imageIdArray(){
+        idArray(){
             const tempArray = [];
 
             let counter = 0;
@@ -111,7 +113,26 @@ const CarouselHeader = {
 
     template: `
         <div>
-            <carousel :image-id-array></carousel>
+            <image-carousel>
+                <template v-slot:mobile-image>
+                    <steam-image :app-id="idArray[0]" :game-name="activeGameArray[0].name" format="header" class="w-100"></steam-image>
+                </template>
+                <template v-slot:back-left>
+                    <steam-image :app-id="idArray[3]" :game-name="activeGameArray[3].name" format="header"></steam-image>                
+                </template>
+                <template v-slot:top-left>
+                    <steam-image :app-id="idArray[4]" :game-name="activeGameArray[4].name" format="header"></steam-image>
+                </template>
+                <template v-slot:center>
+                    <steam-image :app-id="idArray[0]" :game-name="activeGameArray[0].name" format="header"></steam-image>
+                </template>
+                <template v-slot:top-right>
+                    <steam-image :app-id="idArray[1]" :game-name="activeGameArray[1].name" format="header"></steam-image>
+                </template>
+                <template v-slot:back-right>
+                    <steam-image :app-id="idArray[2]" :game-name="activeGameArray[2].name" format="header"></steam-image>
+                </template>
+            </image-carousel>
             <div class="d-flex justify-content-evenly">
                 <button @click="shiftListLeft" class="button btn btn-primary"><i class="bi bi-arrow-left"></i></button>
                 <button @click="getRandomGames" type="button" class="btn btn-success position-relative">
@@ -127,4 +148,4 @@ const CarouselHeader = {
         `
 }
 
-export default CarouselHeader;
+export default SteamCarouselHeader;
