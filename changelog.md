@@ -57,3 +57,11 @@ Changed the names of these files to be more accurate to what is being done.
     :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true,
     'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-light':true}">
 ```
+
+## going to bed - 1:35am
+Research more into [npm obscenity](https://www.npmjs.com/package/obscenity) for inputs. Review is only text input but the dropdown will be changed later.  
+Tomorrow I'm going to add in:
+1. text input instead of dropdown
+2. the progressbar in the main page
+3. add editing into the ReviewListItem rather then the profile
+4. searchbar functionality in profile
