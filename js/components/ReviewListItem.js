@@ -27,8 +27,8 @@ const ReviewListItem = {
                     </div>
                     <div class="col-md-6">
                         <p class="fs-4">
-                            <i class="bi bi-star-fill ms-1" v-for="n in review.ratingNumber"></i>
-                            <i class="bi bi-star ms-1" v-for="n in (review.ratingNumber-5)*-1" v-if="(review.ratingNumber-5)*-1"></i>
+                            <i :class="{'bi':true, 'bi-star-fill ms-1':true, 'text-success':review.ratingNumber>2, 'text-danger':review.ratingNumber<=2}" v-for="n in review.ratingNumber"></i>
+                            <i :class="{'bi':true, 'bi-star ms-1':true, 'text-black':review.ratingNumber>2, 'text-black':review.ratingNumber<=2}" v-for="n in (review.ratingNumber-5)*-1" v-if="(review.ratingNumber-5)*-1"></i>
                         </p>
                     </div>
                 </div>

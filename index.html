@@ -198,7 +198,7 @@
 
             <div class="container text-start" v-for="review in reviewList">
                 <div v-if="review.gameId === newReview.gameId"
-                    :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-danger-subtle': review.ratingNumber <3, 'bg-success-subtle': review.ratingNumber >2}">
+                    :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-light':true}">
                     <review-list-item :review="review"></review-list-item>
                 </div>
             </div>
