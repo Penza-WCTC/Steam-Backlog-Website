@@ -30,15 +30,18 @@
     </nav>
 
     <div id="app" class="container">
+        
+        <progress-bar :progress-text="['Pick','Play','Review']" :progress="[Boolean(!activeGame.appId && !newReview.gameName) ,Boolean(activeGame.appId), Boolean(newReview.gameName)]"></progress-bar>
+
         <div id="view1" v-if="activeGame.appId">
 
             <div class="container text-start pb-3 mb-4">
                 <div class="px-3 pb-3 border border-2 row g-3 bg-light rounded">
-                    <div class="col-md-4 d-flex justify-content-center align-items-start">
-                        <steam-image :app-id="activeGame.appId" :game-name="activeGame.name" format="library_600x900" class="img-fluid" style="max-height: 300px;"></steam-image>
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <steam-image :app-id="activeGame.appId" :game-name="activeGame.name" format="library_600x900" class="img-fluid" style="max-height: 250px;"></steam-image>
                     </div>
 
-                    <div class="col-md-8 d-flex flex-column justify-content-evenly">
+                    <div class="col-md-9 d-flex flex-column justify-content-evenly">
                         <div class="row">
                             <div class="col-sm-6">
                                 <p class="fs-4">{{activeGame.name}}</p>
@@ -182,7 +185,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Write Review and Find Next Game
+                Write Your Review
             </button>
 
             <!-- Modal -->

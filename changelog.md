@@ -67,3 +67,49 @@ Tomorrow I'm going to add in:
 4. searchbar functionality in profile
 
 - 10/20 Changed AddReviewModal to take a text input rather then using a dropdown. Also adjusted ReviewListItem to make more sense.
+
+- 10/20 Created Progress Bar Component.
+
+```JavaScript
+// This gets me the styling numbers for each section. It should work for any size array.
+for (let index = 0; index < barLength; index++) {
+    if(!isNotFirst){
+        //if it is the first (not not first) then it gets its own styling
+        stylingBar.push(2);
+        isNotFirst=true;
+    }else{
+        if(!hasBeenTrue){
+            //True in this program is the current location of the user. so if we pass true, everything should be not done yet.
+            if(this.progress[index]){
+                //this.progress is how far they are. if its true, then that is their current step, and everything else in the list hasn't been done yet.
+                stylingBar.push(1);
+                hasBeenTrue = true;
+            }else{
+                //styles as already done. these will be false values in this.progress, so this is how we track to see if they have been done already 
+                stylingBar.push(3);
+            }
+        }else{
+            //these are all things undone yet.
+            stylingBar.push(0);
+        }
+    }
+}
+
+//if nothing has been done yet, then !hasBeenTrue hasn't been flicked yet. That means that we can watch for this.
+//we have to do this check because of !isNotFirst.
+if(!hasBeenTrue){
+    stylingBar[0] = 4;
+            
+    for (let index = 1; index < stylingBar.length; index++) {
+        stylingBar[index] = 0;
+    }
+}
+```
+
+```HTML
+<!-- This beast interperets what the stylingBar array created above gives us. -->
+<div v-for="(section, index) in getStylingBarArray" :class="{'w-fill':true,'flex-fill':true,'text-center':true,'rounded':true, 'bg-light':section>0,'rounded':section>0,'border':section>0,'border-2':section>0,'border-primary-subtle':section>0,'border-end-0':section==2 || section==3,'rounded-end-0':section==2|| section==3,'border-start-0':section==1|| section==3,'rounded-start-0':section==3,'rounded-end-5':section==1 || section==4,'rounded-start-4':section==4}">{{getText(index)}}</div>
+```
+
+The progress bar component has two required props: an array of String names for each section, and an array of Boolean values for the current progress.
+

@@ -3,6 +3,7 @@ import GameSelectorSection from "./components/GameSelectorSection.js";
 import AddReviewModal from "./components/AddReviewModal.js";
 import ReviewListItem from "./components/ReviewListItem.js";
 import SteamImage from "./components/SteamImage.js";
+import ProgressBar from "./components/ProgressBar.js";
 
 const app = createApp({
     components: {
@@ -10,6 +11,7 @@ const app = createApp({
         AddReviewModal,
         ReviewListItem,
         SteamImage,
+        ProgressBar,
     },
 
     data: function () {
