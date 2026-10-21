@@ -1,5 +1,5 @@
 # Steam Backlog Changes
-- 10/19 finished making the Carousel generic
+- finished making the Carousel generic
 
 Changed the names of these files to be more accurate to what is being done.  
 
@@ -34,11 +34,11 @@ Changed the names of these files to be more accurate to what is being done.
         </template>
 ```
 
-- 10/20 updated Index to use the SteamImage component
+- updated Index to use the SteamImage component
 
-- 10/20 updated Index to have a smaller styled image for the home image.
+- updated Index to have a smaller styled image for the home image.
 
-- 10/20 finished updating Review List Item.
+- finished updating Review List Item.
 
 ```HTML
 <p class="fs-4">
@@ -58,9 +58,9 @@ Changed the names of these files to be more accurate to what is being done.
     'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-light':true}">
 ```
 
-- 10/20 Changed AddReviewModal to take a text input rather then using a dropdown.
+- Changed AddReviewModal to take a text input rather then using a dropdown.
 
-- 10/20 Created Progress Bar Component.
+- Created Progress Bar Component.
 
 ```JavaScript
 // This gets me the styling numbers for each section. It should work for any size array.
