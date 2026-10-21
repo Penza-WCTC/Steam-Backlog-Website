@@ -58,15 +58,7 @@ Changed the names of these files to be more accurate to what is being done.
     'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-light':true}">
 ```
 
-## To Do:
-Research more into [npm obscenity](https://www.npmjs.com/package/obscenity) for inputs. Review is only text input but the dropdown will be changed later.  
-Tomorrow I'm going to add in:
-1. text input instead of dropdown
-2. the progressbar in the main page
-3. add editing into the ReviewListItem rather then the profile
-4. searchbar functionality in profile
-
-- 10/20 Changed AddReviewModal to take a text input rather then using a dropdown. Also adjusted ReviewListItem to make more sense.
+- 10/20 Changed AddReviewModal to take a text input rather then using a dropdown.
 
 - 10/20 Created Progress Bar Component.
 
@@ -113,3 +105,4 @@ if(!hasBeenTrue){
 
 The progress bar component has two required props: an array of String names for each section, and an array of Boolean values for the current progress.
 
+- You can no longer write multiple reviews for games, instead submitting a new review when you already have one replaces the original.

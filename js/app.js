@@ -112,15 +112,31 @@ const app = createApp({
             return returner
         },
 
-        clearReview(){
+        clearReview() {
             this.newReview = {};
         },
 
         addReview(review) {
             this.newReview = review;
-            this.reviewList.push(review);
+            this.addOrUpdate(review);
 
             this.activeGame = {}
+        },
+
+        addOrUpdate(review) {
+            let add = true;
+            let i = 0;
+            this.reviewList.forEach(StoredReview => {
+                if(StoredReview.gameId == review.gameId && StoredReview.userId == review.userId){
+                    this.reviewList.splice(i,1,review);
+                    add = false;
+                }
+                i++
+            });
+            if(add){
+                console.log("hi2")
+                this.reviewList.push(review);
+            }
         },
 
         editReview(review) {
