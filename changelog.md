@@ -1,5 +1,5 @@
 # Steam Backlog Changes
-- 10/19 at 11:41pm finished making the Carousel generic
+- 10/19 finished making the Carousel generic
 
 Changed the names of these files to be more accurate to what is being done.  
 
@@ -34,11 +34,11 @@ Changed the names of these files to be more accurate to what is being done.
         </template>
 ```
 
-- 10/20 at 12:06am updated Index to use the SteamImage component
+- 10/20 updated Index to use the SteamImage component
 
-- 10/20 at some point updated Index to have a smaller styled image for the home image.
+- 10/20 updated Index to have a smaller styled image for the home image.
 
-- 10/20 at 01:00am finished updating Review List Item.
+- 10/20 finished updating Review List Item.
 
 ```HTML
 <p class="fs-4">
@@ -58,10 +58,12 @@ Changed the names of these files to be more accurate to what is being done.
     'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-light':true}">
 ```
 
-## going to bed - 1:35am
+## To Do:
 Research more into [npm obscenity](https://www.npmjs.com/package/obscenity) for inputs. Review is only text input but the dropdown will be changed later.  
 Tomorrow I'm going to add in:
 1. text input instead of dropdown
 2. the progressbar in the main page
 3. add editing into the ReviewListItem rather then the profile
 4. searchbar functionality in profile
+
+- 10/20 Changed AddReviewModal to take a text input rather then using a dropdown. Also adjusted ReviewListItem to make more sense.

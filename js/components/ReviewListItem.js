@@ -43,6 +43,9 @@ const ReviewListItem = {
                     </div>
                     <div class="col-md-6">
                         <div class="row">
+                            <p class="fs-4">I completed:</p>
+                        </div>
+                        <div class="row">
                             <div class="col-md-auto">
                                 <p class="px-2 py-1 fs-6 rounded-pill bg-info d-inline-block">{{review.completion}}</p>
                             </div>
