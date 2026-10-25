@@ -15,7 +15,7 @@ const ReviewListItem = {
     },
 
     template: `
-    <div>
+    <div :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-light':true}">
         <div class="row g-3">
             <div class="col-md-2 offset-md-1 d-none d-md-block">
                 <img :src="getSRC" :alt="getAlt" class="w-75 mx-auto border border-2 rounded-3">

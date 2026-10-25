@@ -35,50 +35,7 @@
 
         <div id="view1" v-if="activeGame.appId">
 
-            <div class="container text-start pb-3 mb-4">
-                <div class="px-3 pb-3 border border-2 row g-3 bg-light rounded">
-                    <div class="col-md-3 d-flex justify-content-center">
-                        <steam-image :app-id="activeGame.appId" :game-name="activeGame.name" format="library_600x900" class="img-fluid" style="max-height: 250px;"></steam-image>
-                    </div>
-
-                    <div class="col-md-9 d-flex flex-column justify-content-evenly">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p class="fs-4">{{activeGame.name}}</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="fs-4">{{activeGame.releaseDate}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <p class="fs-5">Current Playtime:</p>
-                                </div>
-                                <div class="row">
-                                    <p class="fs-6">{{activeGame.hoursPlayed}} Hrs</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <p class="fs-5">Current Achievements:</p>
-                                </div>
-                                <div class="row">
-                                    <p class="fs-6">16 / 30</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="fs-5">Tags:</p>
-                            </div>
-                            <div class="col-12 fs-6">
-                                <p class="px-2 py-1 rounded-pill bg-info d-inline-block me-1" v-for="tag in activeGame.tags">{{tag}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <active-game-display :active-game="activeGame"></active-game-display>
 
             <div class="container text-start pb-3 mb-2">
                 <div class="px-3 pb-3 border border-2 row g-3 bg-light rounded">
@@ -199,11 +156,10 @@
                 <hr>
             </div>
 
+            <!-- list component to put a compression on this list to squish down the elements -->
+
             <div class="container text-start" v-for="review in reviewList">
-                <div v-if="review.gameId === newReview.gameId"
-                    :class="{'container':true, 'pb-3':true, 'my-4':true, 'rounded':true, 'border':true, 'border-opacity-50':true, 'border-danger': review.ratingNumber <3, 'border-success': review.ratingNumber >2, 'py-3':true, 'px-1':true, 'bg-light':true}">
-                    <review-list-item :review="review"></review-list-item>
-                </div>
+                <review-list-item v-if="review.gameId === newReview.gameId" :review="review"></review-list-item>
             </div>
 
             <div class="d-flex justify-content-end sticky-bottom ">
